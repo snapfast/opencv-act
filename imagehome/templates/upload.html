@@ -5,6 +5,7 @@
 
 
 <!--
+
 <div class="jumbotron text-center">
   <div class="container">
     <a href="/" class="lang-logo">
@@ -28,16 +29,16 @@
     </p>
 
     <form class="form-horizontal" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
       <div class="form-group">
         <label class="col-sm-4 control-label" for="exampleFormControlFile1">Upload a jpeg file</label>
         <div class="col-sm-4">
           <input class="form-control" name="document" type="file" class="form-control-file" id="exampleFormControlFile1">
         </div>
         <div class="col-sm-4"></div>
-
       </div>
 
-      <a type="submit" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-flash"></span> Upload</a>
+      <button type="submit" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-flash"></span> Upload</button>
 
     </form>
     
