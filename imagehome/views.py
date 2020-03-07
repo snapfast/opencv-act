@@ -5,17 +5,26 @@ from django.core.files.storage import FileSystemStorage
 from .models import Greeting
 
 from .forms import UploadFileForm
-from .images import handle_uploaded_file
+from .images import rotate
 
 
 # # this function saves the file in media folder
 def index(request):
+    out_image = None
     if request.method == 'POST':
         uploaded_file = request.FILES['document']
         print(uploaded_file.name, uploaded_file.size)
         fs = FileSystemStorage()
         fs.save(uploaded_file.name, uploaded_file)
-    return render(request, 'index.html')
+        # imageuploaded
+        print(fs.path(uploaded_file.name))
+        out_image = rotate(fs.path(uploaded_file.name), uploaded_file.name)
+        print(out_image)
+    return render(request, 'index.html', {"out_image": out_image})
+
+
+def image_list(request):
+    return render(request, 'imagelist.html')
 
 
 def db(request):
@@ -25,10 +34,6 @@ def db(request):
     greetings = Greeting.objects.all()
 
     return render(request, "db.html", {"greetings": greetings})
-
-
-def image_list(request):
-    return render(request, 'imagelist.html')
 
 
 '''

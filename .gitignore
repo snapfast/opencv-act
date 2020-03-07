@@ -1,8 +1,4 @@
-venv
-*.pyc
-staticfiles
+venv/
 .env
-db.sqlite3
-getting-started/*
-.idea
-.vs
+.idea/*
+.vs/*

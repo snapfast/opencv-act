@@ -24,10 +24,13 @@
   <div class="container">
 
     <p>
-      <img src="https://via.placeholder.com/600x400?text=Visit+OpenCV" class="img-rounded" id="user-image">
+      <a href="{{ out_image|default_if_none:'https://via.placeholder.com/600x400?text=Visit+OpenCV' }}" download>
+        <img src="{{ out_image|default_if_none:'https://via.placeholder.com/600x400?text=Visit+OpenCV' }}" class="img-rounded" id="user-image" width="700">
+      </a>
     </p>
 
     <form class="form-horizontal" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
       <div class="form-group">
         <label class="col-sm-4 control-label" for="exampleFormControlFile1">Upload a jpeg file</label>
         <div class="col-sm-4">
@@ -37,7 +40,7 @@
 
       </div>
 
-      <a type="submit" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-flash"></span> Upload</a>
+      <button type="submit" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-flash"></span> Upload</button>
 
     </form>
     
@@ -47,7 +50,7 @@
 
 <div class="container">
   <div class="alert alert-info text-center" role="alert">
-    More image editing mechanism to come in future to this URL <a href="https://opencvaction.herokuapp.com" class="alert-link">OpenCV in Action</a> tutorial.
+    More images to come in future to this URL <a href="https://opencv-act.herokuapp.com" class="alert-link">OpenCV in Action</a>.
   </div>
   <hr>
   <div class="row">
