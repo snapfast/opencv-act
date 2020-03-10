@@ -5,7 +5,7 @@ from django.core.files.storage import FileSystemStorage
 from .models import Greeting
 
 from .forms import UploadFileForm
-from .images import rotate
+from .images import face_detection
 
 
 # # this function saves the file in media folder
@@ -18,7 +18,7 @@ def index(request):
         fs.save(uploaded_file.name, uploaded_file)
         # imageuploaded
         print(fs.path(uploaded_file.name))
-        out_image = rotate(fs.path(uploaded_file.name), uploaded_file.name)
+        out_image = face_detection(fs.path(uploaded_file.name))
         print(out_image)
     return render(request, 'index.html', {"out_image": out_image})
 
