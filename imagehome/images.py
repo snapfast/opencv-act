@@ -18,12 +18,12 @@ def face_detection(filepath):
         roi_gray = gray[y:y + h, x:x + w]
         roi_color = img[y:y + h, x:x + w]
         eyes = eye_cascade.detectMultiScale(roi_gray)
-        #for (ex, ey, ew, eh) in eyes:
+        # for (ex, ey, ew, eh) in eyes:
         #    cv.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 0, 255), 2)
 
-    profile_faces = profile_face_cascade.detectMultiScale(gray, 1.3, 5)
-    for (x, y, w, h) in profile_faces:
-        img = cv.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
+    #profile_faces = profile_face_cascade.detectMultiScale(gray, 1.1, 2)
+    #for (x, y, w, h) in profile_faces:
+    #    img = cv.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
     # save file to rotated directory
     folderpath, tail = os.path.split(filepath)
