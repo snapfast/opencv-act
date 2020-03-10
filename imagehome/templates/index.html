@@ -24,11 +24,12 @@
   <div class="container">
 
     <p>
-      <a href="{{ out_image|default_if_none:'https://via.placeholder.com/600x400?text=Visit+OpenCV' }}" download>
-        <img src="{{ out_image|default_if_none:'https://via.placeholder.com/600x400?text=Visit+OpenCV' }}" class="img-rounded" id="user-image" width="700">
+      <a href="{{ out_image|default_if_none:'https://via.placeholder.com/600x400?text=github.com/opencv' }}" download>
+        <img src="{{ out_image|default_if_none:'https://via.placeholder.com/600x400?text=Upload+an+Image+with+or+without+Faces' }}" class="img-rounded" id="user-image" width="700">
       </a>
     </p>
 
+    <p>Click the image to Download it.</p>
     <form class="form-horizontal" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="form-group">
