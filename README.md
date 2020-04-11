@@ -7,4 +7,5 @@ I didn't find any specific need to add a conventional database for this project.
 ###### check out the project below.
 [https://opencv-act.herokuapp.com](https://opencv-act.herokuapp.com)
 
-> open to feedback at @_rahulbali
+> open to feedback
+twitter.com/_rahulbali
